@@ -11,15 +11,23 @@
     ![](SVD.png)
 
 ## Transfomation in 2D
-- Rotation+Scaling+Translation
+
+|Name|Function|Preserve|DOF|
+|----|--------|--------|---|
+|Isometries|Rotation and translation|distance|$3$|
+|Similarities|Rotation, Scale and translation|ratio of lengths, angles|$4$|
+|Affinities|||6|
+
+- **Rotation+Scaling+Translation**
 
     ![](transform1.png)
-- Affinities
+
+- **Affinities**
 
     ![](affinity.png)
 
 ## Camera Calibration
-- intrinsic parameters
+- **intrinsic parameters**
     + Simply use similar triangle to find the fomula:
 
         ![](camera1.png)
@@ -27,10 +35,10 @@
     + Use the trick of **Homogeneous Coordinates**, finally:
 
         ![](camera3.png)
-- extrinsic parameters
+- **extrinsic parameters**
     + rotattion and translation
     + $6$ parameters: $(\theta, \phi, \psi, c_x, c_y, c_z)$
-- distortion parameters
+- **distortion parameters**
     + Radial distortion
 
         ![](camera4.png)
@@ -42,7 +50,7 @@
 
         ![](camera7.png)
     + $5$ parameters: $(k1,k2,k3,p1,p2)$
-- Camera Calibration
+- **Camera Calibration**
     + To find above parameters
 
         ![](camera8.png)
