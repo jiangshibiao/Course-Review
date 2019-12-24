@@ -14,9 +14,10 @@
 
 |Name|Function|Preserve|DOF|
 |----|--------|--------|---|
-|Isometries|Rotation and translation|distance|$3$|
-|Similarities|Rotation, Scale and translation|ratio of lengths, angles|$4$|
-|Affinities|||6|
+|Isometries|rotation, translation|distance|$3$|
+|Similarities|[above], scale|ratio of lengths, angles|$4$|
+|Affinities||parallel lines, ratio of areas and lengths|$6$|
+|Projective||cross ratio of 4 collinear points, collinearity|$8$|
 
 - **Rotation+Scaling+Translation**
 
@@ -26,13 +27,38 @@
 
     ![](affinity.png)
 
-## Camera Calibration
-- **intrinsic parameters**
-    + Simply use similar triangle to find the fomula:
+- **Projective**
+
+    ![](projective1.png)
+
+## Projective
+
+![](projective2.png)
+
+- $x=PX,x'=P'X$ How to change $x$ to $x'$?
+- In 2D perspective, $x'=Hx$. However, due to projective transformation, they are in 3D Homogeneous Coordinates and $x' \times Hx = 0$, where $\times $ means cross product.
+- Rewrite $9$ parameters from $H$ in a column vector $h$. For one pair of points, it can be derived that $A_{3\times9}h_{9 \times 1}=0$. Note that although there are $3$ equations, only $2$ of them are independent. So finally we can acquire that $A_{2N\times9}\cdot h=0$
+- Use SVD to solve this equation: $A=U_{2N\times9}\Sigma_{9\times9}V^T_{9\times9}$. **$h$ is is the last column of $V^T$.**
+
+## Camera Model
+
++ **Pinhole camera**
+
+    - Because the point is not exactly at the center, we should add shift parameters $c_x$ and $c_y$. So that $x'=f_xx+c_x, y'=f_yy+c_y$.
 
         ![](camera1.png)
-    + Because the point is not exactly at the center, we should add shift parameters $c_x$ and $c_y$, totally $4$ parameters.
-    + Use the trick of **Homogeneous Coordinates**, finally:
+	- Why the aperture cannot be too small?
+		+ Less light passes through
+		+ Diffraction effect
+
++ Lenses
+	- For thin lense:
+
+		![](camera0.png)
+
+## Camera Calibration
+- **intrinsic parameters**
+    + From Pinhole Camera Model, totally $4$ parameters. Use the trick of **Homogeneous Coordinates**, finally:
 
         ![](camera3.png)
 - **extrinsic parameters**
