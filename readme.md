@@ -19,24 +19,19 @@
 |Affinities||parallel lines, ratio of areas and lengths|$6$|
 |Projective||cross ratio of 4 collinear points, collinearity|$8$|
 
-- **Rotation+Scaling+Translation**
-
+- **Rotation+Scaling+Translation**  
     ![](transform1.png)
 
-- **Affinities**
-
+- **Affinities**  
     ![](affinity.png)
 
-- **Projective**
-
+- **Projective** 
     ![](projective1.png)
 
-- **Cross in Matrix**
-
+- **Cross in Matrix**  
     ![](matrix_multiplication.png)
 
-## Projective
-
+## Projective  
 ![](projective2.png)
 
 - $x=PX,x'=P'X$ How to change $x$ to $x'$?
@@ -46,43 +41,34 @@
 
 ## Camera Model
 
-+ **Pinhole camera**
-
-    - Because the point is not exactly at the center, we should add shift parameters $c_x$ and $c_y$. So that $x'=f_xx+c_x, y'=f_yy+c_y$.
-
++ **Pinhole camera**  
+    - Because the point is not exactly at the center, we should add shift parameters $c_x$ and $c_y$. So that $x'=f_xx+c_x, y'=f_yy+c_y$.  
         ![](camera1.png)
 	- Why the aperture cannot be too small?
 		+ Less light passes through
 		+ Diffraction effect
 
 + Lenses
-	- For thin lense:
-
+	- For thin lense:  
 		![](camera0.png)
 
 ## Camera Calibration
 - **intrinsic parameters**
-    + From Pinhole Camera Model, totally $4$ parameters. Use the trick of **Homogeneous Coordinates**, finally:
-
+    + From Pinhole Camera Model, totally $4$ parameters. Use the trick of **Homogeneous Coordinates**, finally:  
         ![](camera3.png)
 - **extrinsic parameters**
     + rotation and translation
     + $6$ parameters: $(\theta, \phi, \psi, c_x, c_y, c_z)$
 - **distortion parameters**
-    + Radial distortion
-
-        ![](camera4.png)
-
+    + Radial distortion  
+        ![](camera4.png)  
         ![](camera5.png)
-    + Tangential distortion
-
-        ![](camera6.png)
-
+    + Tangential distortion  
+        ![](camera6.png)  
         ![](camera7.png)
     + $5$ parameters: $(k1,k2,k3,p1,p2)$
 - **Camera Calibration**
-    + Without distortion, the transform matrices are as follows ($s$ is the Skew parameter):
-
+    + Without distortion, the transform matrices are as follows ($s$ is the Skew parameter):  
         ![](camera9.png)
     + parameters number: $5+3+3=11$. Need $6$ correspondences.
 - **Homogeneous $M \times N$ Linear Systems**
@@ -104,18 +90,15 @@
 ## Stereo-view Geometry
 
 - Sets of parallel lines on the same plane lead to collinear **vanishing points**.
-- **Epipolar Geometry 对极几何**
-
+- **Epipolar Geometry 对极几何**  
 	![](epipolar.png)
 
-- **Epipolar Constraint**
-
+- **Epipolar Constraint**  
 	![](epipolar_constraint.png)
     + Denote $p=K[I,0]P$ and $p'=K[R,T]P$.
     + Let $x=K^{-1}p$, finally we get that $x^T \cdot [T \times (Rx')] = 0$, which is called ***Epipolar Constraint***. It means that **vector $x^T$,$T$ and $Rx'$ are coplanar**.
     + Denote $E=T \times R$, then $x^TEx'=0$, $E$ is called ***Essential Matrix***.
-	+ Properties about Essential Matrix
-
+	+ Properties about Essential Matrix  
 		![](epipolar_properties.png)
 	+ Write back $K$(may different between cameras), $F$ is called ***Fundamental Matrix***.
 		![](Fundamental_Matrix.png)
@@ -157,8 +140,7 @@
     + goals
         - Extract useful information from the images
         - Modify or enhance image properties
-    + Gaussian Filters
-
+    + Gaussian Filters  
         ![](Gaussian.png)
         - Rule of thumb: set filter half-width to about $3\sigma$
         - *Separable* kernel; Convolution with self is another Gaussian
