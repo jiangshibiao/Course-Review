@@ -62,7 +62,7 @@
 
         ![](camera3.png)
 - **extrinsic parameters**
-    + rotattion and translation
+    + rotation and translation
     + $6$ parameters: $(\theta, \phi, \psi, c_x, c_y, c_z)$
 - **distortion parameters**
     + Radial distortion
@@ -103,3 +103,23 @@
 - **Epipolar Geometry 对极几何**
 
 	![](epipolar.png)
+
+- **Epipolar Constraint**
+	![](epipolar_constraint.png)
+    + Denote $p=K[I,0]P$ and $p'=K[R,T]P$.
+    + Let $x=K^{-1}p$, finally we get that $x^T \cdot [T \times (Rx')] = 0$, which is called ***Epipolar Constraint***. It means that **vector $x^T$,$T$ and $Rx'$ are coplanar**.
+    + Denote $E=T \times R$, then $x^TEx'=0$, $E$ is called ***Essential Matrix***.
+	+ Properties about Essential Matrix
+		![](epipolar_properties.png)
+	+ Write back $K$(may different between cameras), $F$ is called ***Fundamental Matrix***.
+		![](Fundamental_Matrix.png)
+    + Properties about Fundamental Matrix is similar to essential matrix. $7$ DOF.
+
+- **Solve for Fundamental Matrix**
+	+ $Wf = 0$ ($f_{9 \times 1}$ collects the parameters in $F$).
+		- If $rk(W)=8$:  exists unqiue $f$.
+		- If $rk(W)>8$:  find $\hat F$calculated by SVD.
+	+ Note that $F$'s rank is $2$ but $\hat F$ may not. Second equation: $||F-\hat F|| =0$ and $det(F)=0$
+	+ Normalization
+		- Transform one image first before calculating $F$.
+		- Find a transform that: Origin (1) centroid of image points. (2) Mean square distance of the data points from origin is $2$ pixels.
