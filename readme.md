@@ -31,6 +31,10 @@
 
     ![](projective1.png)
 
+- **Cross in Matrix**
+
+    ![](matrix_multiplication.png)
+
 ## Projective
 
 ![](projective2.png)
@@ -105,11 +109,13 @@
 	![](epipolar.png)
 
 - **Epipolar Constraint**
+
 	![](epipolar_constraint.png)
     + Denote $p=K[I,0]P$ and $p'=K[R,T]P$.
     + Let $x=K^{-1}p$, finally we get that $x^T \cdot [T \times (Rx')] = 0$, which is called ***Epipolar Constraint***. It means that **vector $x^T$,$T$ and $Rx'$ are coplanar**.
     + Denote $E=T \times R$, then $x^TEx'=0$, $E$ is called ***Essential Matrix***.
 	+ Properties about Essential Matrix
+
 		![](epipolar_properties.png)
 	+ Write back $K$(may different between cameras), $F$ is called ***Fundamental Matrix***.
 		![](Fundamental_Matrix.png)
@@ -123,3 +129,61 @@
 	+ Normalization
 		- Transform one image first before calculating $F$.
 		- Find a transform that: Origin (1) centroid of image points. (2) Mean square distance of the data points from origin is $2$ pixels.
+
+## Stereo systems
+
++ Some applications
+    - Stereo vision: Estimate the position of $P$ given the observation of $P$ from two view points.
+    - Triangulation: Intersecting the two lines of sight gives rise to $P$
+
++ Making image planes parallel
+    - Goal: Estimate the perspective transformation $H$ that makes the images parallel.
+    - To be continued...
+
++ Correspondence problem
+    - Correlation Methods
+
+        ![](Correlation_Methods.png)
+    - Smaller window
+        + More detail
+        + More noise
+    - Larger window
+        + Smoother disparity maps
+        + Less prone to noise
+    - To be continued...
+
+## Image Processing
+
+- Filters
+    + goals
+        - Extract useful information from the images
+        - Modify or enhance image properties
+    + Gaussian Filters
+
+        ![](Gaussian.png)
+        - Rule of thumb: set filter half-width to about $3\sigma$
+        - *Separable* kernel; Convolution with self is another Gaussian
+    + Median and Mean filter
+
+- Differentiation
+
+    ![](Differentiation.png)
+
+- Sub-sampling
+    + Problem: Aliasing
+    + Sampling Theorem (Nyquist)： When sampling a signal at discrete intervals, the sampling frequency must be $2f_{max}$($f$ is frequency).
+
+- Edge Detection
+    + Edge: a location with high gradient
+    + Most widely used method: Canny Edge Detection
+        1. Gaussian smoothing
+        2. & Derivative = Derivative of Gaussian
+        3. Find magnitude and orientation of gradient
+        4. Extract edge points: "Non-maximum suppression"
+        5. Linking and thresholding "Hysteresis"
+
+- Corner Detector
+
+    ![](Corner.png)
+    + Harris Detector
+        - To be continued...
