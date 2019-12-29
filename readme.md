@@ -141,8 +141,7 @@
     - To be continued...
 
 + Correspondence problem
-    - Correlation Methods
-
+    - Correlation Methods  
         ![](Correlation_Methods.png)
     - Smaller window
         + More detail
@@ -165,8 +164,7 @@
         - *Separable* kernel; Convolution with self is another Gaussian
     + Median and Mean filter
 
-- Differentiation
-
+- Differentiation  
     ![](Differentiation.png)
 
 - Sub-sampling
@@ -182,8 +180,7 @@
         4. Extract edge points: "Non-maximum suppression"
         5. Linking and thresholding "Hysteresis"
 
-- Corner Detector
-
+- Corner Detector  
     ![](Corner.png)
     + Harris Detector
         - To be continued...
