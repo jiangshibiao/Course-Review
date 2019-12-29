@@ -77,6 +77,29 @@
         ![](camera7.png)
     + $5$ parameters: $(k1,k2,k3,p1,p2)$
 - **Camera Calibration**
-    + To find above parameters
+    + Without distortion, the transform matrices are as follows ($s$ is the Skew parameter):
 
-        ![](camera8.png)
+        ![](camera9.png)
+    + parameters number: $5+3+3=11$. Need $6$ correspondences.
+- **Homogeneous $M \times N$ Linear Systems**
+	+ $Ax=0$, $A_{M \times N}, M > N$
+	+ To find non-zero solution, Minimize $|Ax|^2$ under the constraint $|x|^2=1$.
+	+ A possible method: Direct Linear Transformation
+	+ General method for Calibration Problem: Compute SVD decomposition of $A$, the last column of V gives $x$.
+	+ Degenerate cases
+		- Points cannot lie on the same plane.
+		- Points cannot lie on the intersection curve of two quadric surfaces.
+
+- **Taking Radial Distortion into Account**
+	+ nonlinear
+	+ Methods
+        - Newton Method
+        - Levenberg-Marquardt Algorithm
+    + The latter doesn’t require the computation of $H$.
+
+## Stereo-view Geometry
+
+- Sets of parallel lines on the same plane lead to collinear **vanishing points**.
+- **Epipolar Geometry 对极几何**
+
+	![](epipolar.png)
