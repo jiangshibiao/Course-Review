@@ -117,7 +117,7 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 		+ $\forall q \in K-H$ if $\delta(q, \rhd)=(p, b),$ then $b=\rightarrow$
 		+ $\forall q \in K-H$ and $a \in \sum,$ if $\delta(q, a)=(p, b),$ then $b \neq \rhd$
 
-<img src="configuration.png" style="zoom: 60%;" />
+<img src="configuration.png" style="zoom: 50%;" />
 
 + Notation for Turing Machine
 	- $M_a$ (or simply `a`): The machine with two states that only to write $a$ on the tape.
