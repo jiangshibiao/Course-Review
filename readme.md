@@ -6,6 +6,6 @@
 
 The content is as follows:
 
-+   [Computer Vision by Mingli Song](https://github.com/jiangshibiao/Course-Review/Computer-Vision)
-+   [Mix Reality by Hujun Bao](https://github.com/jiangshibiao/Course-Review/Mix-Reality)
-+   
++   [**Computer Vision** by Mingli Song](https://github.com/jiangshibiao/Course-Review/blob/master/Computer-Vision/Computer-Vision.md)
++   [**Mix Reality**by Hujun Bao](https://github.com/jiangshibiao/Course-Review/blob/master/Mix Reality/Mix Reality.md)
++   [**Theory of Computation**](https://github.com/jiangshibiao/Course-Review/blob/master/Theory-of-Computation/Theory-of-Computation.md)
