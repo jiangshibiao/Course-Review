@@ -108,15 +108,16 @@
 
 - **Epipolar Constraint**
 
-	![](epipolar_constraint.png)
+  ![](epipolar_constraint.png)
     + Denote $p=K[I,0]P$ and $p'=K[R,T]P$.
     + Let $x=K^{-1}p$, finally we get that $x^T \cdot [T \times (Rx')] = 0$, which is called ***Epipolar Constraint***. It means that **vector $x^T$,$T$ and $Rx'$ are coplanar**.
     + Denote $E=T \times R$, then $x^TEx'=0$, $E$ is called ***Essential Matrix***.
-	+ Properties about Essential Matrix
+  + Properties about Essential Matrix
 
-		![](epipolar_properties.png)
-	+ Write back $K$(may different between cameras), $F$ is called ***Fundamental Matrix***.
-		![](Fundamental_Matrix.png)
+  	![](epipolar_properties.png)
+  + Write back $K$(may different between cameras), $F$ is called ***Fundamental Matrix***.
+  	![](Fundamental_Matrix.png)
+    
     + Properties about Fundamental Matrix is similar to essential matrix. $7$ DOF.
 
 - **Solve for Fundamental Matrix**
@@ -173,7 +174,7 @@
     + Edge: a location with high gradient
     + Most widely used method: Canny Edge Detection
         1. Gaussian smoothing
-        2. & Derivative = Derivative of Gaussian
+        2. Derivative of Gaussian
         3. Find magnitude and orientation of gradient
         4. Extract edge points: "Non-maximum suppression"
         5. Linking and thresholding "Hysteresis"
@@ -188,7 +189,6 @@
         - $\lambda1 \sim \lambda2$: Corner
         - $\lambda1 \gg \lambda2$: Edge
     + Set $\rm R=det(M)-k \cdot Trace(M)$, use $R$ to judge corners ($k \in [0.04,0.06]$).
-
         ![](corner3.png)
     + Property: Rotation invariance
 
