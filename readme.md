@@ -15,5 +15,6 @@ The content is as follows:
 +   [**Theory of Computation**](https://github.com/jiangshibiao/Course-Review/blob/master/Theory-of-Computation/Theory-of-Computation.md)
 +   [**Operating System** by Shanpin Li](https://github.com/jiangshibiao/Course-Review/blob/master/Operating-System/Operating-System.md)
 +   [**Object-Oriented Programming** by Lanqing Hu](https://github.com/jiangshibiao/Course-Review/blob/master/Object-Oriented-Programming/Object-Oriented-Programming.md)
+    +   Project: [SubCode](https://github.com/jiangshibiao/Text-Editor--Subcode)
 +   [**Python Programming** by Chunhui Chen](https://github.com/jiangshibiao/Course-Review/blob/master/Python-Programming/Python-Programming.md)
 +   [**Computer Organization** by De Ma](https://github.com/jiangshibiao/Course-Review/blob/master/Computer-Organization/Computer-Organization.md)
