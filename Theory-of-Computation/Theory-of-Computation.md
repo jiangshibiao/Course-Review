@@ -6,7 +6,7 @@
 	- Let $R_a = \{ b: b \in A \wedge (a,b) \in R \}$
 	- Then **D is distinct from each $R_a$**.
 + if $\sigma$ is a finite alphabet, then $\sigma^\ast$ is countably infinite set (Lexicographically).
-+ Kleene Star $$\begin{aligned} L^{*} &=\left\{w \in \Sigma^{*}: w=w_{1} \cdots w_{k}, k \geq 0, w_{1}, \cdots, w_{k} \in L\right\} \\ &=L^{0} \cup L^{1} \cup L^{2} \cup \cdots \\ L^{+}&=L^{1} \cup L^{2} \cup L^{3} \cup \cdots \end{aligned}$$
++ Kleene Star: $$\begin{aligned} L^{\ast} &=\{w \in \Sigma^{*}: w=w_{1} \cdots w_{k}, k \geq 0, w_{1}, \cdots, w_{k} \in L\} \\ &=L^{0} \cup L^{1} \cup L^{2} \cup \cdots \\ L^{+}&=L^{1} \cup L^{2} \cup L^{3} \cup \cdots \end{aligned}$$
 
 ## Regular Language $\leftrightarrow$ Finite Automata
 
@@ -39,7 +39,7 @@
     	- $K^{\prime}=2^{K}$
     	- $s^{\prime}=E(s)$
     	- $F^{\prime}=\{Q | Q \subseteq K, Q \cap F \neq \emptyset\}$
-    	- For each $Q \subseteq K$ and $\forall a \in \Sigma$, let $\delta(Q, a)=\cup\{E(p) | p \in K \text { and }(q, a, p) \in \Delta$ for some $q \in Q\}$
+    	- For each $Q \subseteq K$ and $\forall a \in \Sigma$, let $\delta(Q, a)=\cup\{E(p) | p \in K$ and $(q, a, p) \in \Delta$ for some $q \in Q\}$
     + Claim: For any string $w \in \sum^{\ast}$ and any states $p, q \in K$, $(q, w) \vdash_{M}^{\ast}(p, e) \Leftrightarrow(E(q), w) \vdash_{M^{\prime}}^{\ast}(P, e)$ (for some set $P$ containing $p$).
 		> Use Mathematical Induction to prove this claim.
 + **Closure Properties** of Regular Languages: The class of languages accepted by FA is **closed** under:
@@ -54,11 +54,11 @@
         - Prove1: $L (M_{1}) \cap L(M_{2})=\sum^{\ast}-(\sum^{\ast}-L(M_{1})) \cup(\sum^{\ast}-L(M_{2}))$
         - Prove2: $K = K_1 \times K_2, F = F_1 \times F_2\dots$
     - **Example**: Show $L=\{w \in\{a, b\}^{\ast}: w \text { has an equal number of } a^{\prime} s \text { and } b^{\prime} s\}$ is not regular.
-    - **Proof**: If $L$ is regular, then so would be $L \cap a^{\ast} b^{\ast}$ But $L \cap a^{\ast} b^{\ast}=\left\{a^{n} b^{n}: n \geq 0\right\}$ is not regular language.
+    - **Proof**: If $L$ is regular, then so would be $L \cap a^{\ast} b^{\ast}$ But $L \cap a^{\ast} b^{\ast}=\{a^{n} b^{n}: n \geq 0\}$ is not regular language.
 + Theorem: **A language is regular iff it is accepted by a $\mathrm{FA}$ .**
 	- $\mathrm{RL}\rightarrow \mathrm{FA}$: Simply use the above properties.
 	- $\mathrm{FA}\rightarrow \mathrm{RL}$ 
-		+ Definition: For $i, j=1, \cdots, n$ and $k=0, \cdots, n,$ define $R(i, j, k)=\{w | w \in \sum^{\ast}, \delta(q_{i}, w )=q_{j}$ and for any prefix $x$ of $w$, $x \neq e$, $\delta (q_{i}, x)=q_{l} \wedge(l \leq k) \}$. 
+		+ Definition: For $i, j=1, \cdots, n$ and $k=0, \cdots, n$, define $R(i, j, k)=\{w | w \in \sum^{\ast}, \delta(q_i, w)=q_j \}$ and for any prefix $x$ of $w$, $x \neq e$, $\delta (q_{i}, x)=q_{l} \wedge(l \leq k) \}$. 
 		+ i.e. Each string $w$ which satisfies that $q_i$ use $w$ to reach $q_j$ just with the help of $q_1\dots q_k$.
 		+ Lemma: $R(i, j, k)$ are regular languages.
 		+ Construct the new equivalent FA $K'=K \cup \{s',f'\}$ that has the only initial state and the only final state. $R(s',f',n)$ is the regular language we construct.
@@ -78,14 +78,14 @@
 	- $\Sigma \subseteq V$ is the set of terminal symbols; 
 	- $S \in V-\sum$ is the start symbol;
 	- $R$ is the set of rules, a finite subset of $(V-\Sigma) \times V^{*}$
-	**Example**: Let $G=(\{S, a, b\},\{a, b\}, R=\{S \rightarrow e, S \rightarrow S S, S \rightarrow a S b, S \rightarrow b S a\}, S)$, then $L(G)=\{w \in\{a, b\}^{*}: w \text { has the same number of } a^{\prime} s \text { and } b^{\prime} s\}$
+	**Example**: Let $G=(\{S, a, b\},\{a, b\}, R=\{S \rightarrow e, S \rightarrow S S, S \rightarrow a S b, S \rightarrow b S a\}, S)$, then $L(G)=\{w \in\{a, b\}^{\ast}: w \text { has the same number of } a^{\prime} s \text { and } b^{\prime} s\}$
 + Definition: A **PushDown Automata** is a sextuple $M=\left(K, \sum, \Gamma, \Delta, s, F\right)$, where
 	- $K$ is a finite set of states
 	- $\sum$ is an alphabet (the input symbols)
 	- $\Gamma$ is an alphabet (the stack symbols)
 	- $s \in K$ is the initial state
 	- $F \subseteq K$ is the set of final states
-	- $\Delta,$ transition relation, is a subset of $(K \times(\sum \cup\{e\}) \times \Gamma^{*}) \times(K \times \Gamma^{*})$
+	- $\Delta,$ transition relation, is a subset of $(K \times(\sum \cup\{e\}) \times \Gamma^{\ast}) \times(K \times \Gamma^{\ast})$.
 + $\mathrm{PDA}$ **execution**: reading a symbol
 Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can: 
 	- enter some state $q$
@@ -107,7 +107,7 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 	- Theorem: Let $G=(V, \Sigma, R, S)$ be a CFG. Then any string $w \in L(G)$ of length greater than $\phi(G)|V-\Sigma|$ can be rewritten as $w=u v x y z$ in such way that
 		+ $|v y| \geq 1$
 		+ ${u v^{n} x y^{n} z \in L(G) \text { for every } n \geq 0}$
-	**Example**: Show that $L=\left\{a^{n} b^{n} c^{n}: n \geq 0\right\}$ is not CFL.
+	**Example**: Show that $L=\{a^{n} b^{n} c^{n}: n \geq 0\}$ is not CFL.
 	**Proof**: **Case** $1$: $v, y$ contains occurrences of all three symbols $a, b, c$ $\Rightarrow$ at least one of $v, y$ must contain at least two of them $\Rightarrow$ order error in $u v^{2} x y^{2} z$.       **Case** $2$: $v, y$ contains occurrences of some but not all of them $\Rightarrow u v^{2} x y^{2} z$ has unequal number of $a^{\prime} s, b^{\prime} s$ and $c^{\prime} s$
 
 ## Turing Machine
@@ -142,13 +142,13 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 ## More concepts
 
 + **Recursive**
-	- $M$ decides $L \subseteq \Sigma^{*}$ if $\forall w \in \Sigma^{*}$ the following is true:
+	- $M$ decides $L \subseteq \Sigma^{\ast}$ if $\forall w \in \Sigma^{\ast}$ the following is true:
 		+ $w \in L$ iff $M$ accepts $w$ (ends in the $yes$ configuration)
 		+ $w \notin L$ iff $M$ rejects $w$ (ends in the $no$ configuration)
 	- A language $L$ is **recursive** if $\exists$ a $\mathrm{TM}$ that decides $L$.
-	- Example:  $L=\left\{a^{n} b^{n} c^{n}: n \geq 0\right\} .$ The Turing Machine shown below decides $L$.
+	- Example:  $L=\{a^{n} b^{n} c^{n}: n \geq 0\} .$ The Turing Machine shown below decides $L$.
 		<img src="anbncn.png" style="zoom: 67%;" />
-	- Definition: Let $f$ be a function $f: \Sigma_{0}^{*} \rightarrow \Sigma_{0}^{*}$ . $M$ **computes** function $f$ if $\forall w \in \Sigma_{0}^{*}, M(w)=f(w)$. 
+	- Definition: Let $f$ be a function $f: \Sigma_{0}^{\ast} \rightarrow \Sigma_{0}^{\ast}$ . $M$ **computes** function $f$ if $\forall w \in \Sigma_{0}^{\ast}, M(w)=f(w)$. 
 	    + A function $f$ is **recursive** if $\exists$ a TM $M$ **computes** $f$.
 	    + Example: $succ(n)=n+1$. 
 	    	<img src="succ.png" style="zoom: 67%;" />
@@ -161,19 +161,19 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 		+ A language $L$ is **recursively enumerable**(r.e.), iff $\exists a$ TM $M$ that **semidecides** $L$
 		+ $M \uparrow$ means $M$ can not halt.
 
-+ **grammer**
++ **grammar**
     + Definition: A **grammar** (or unrestricted grammar) is a quadruple $G=(V, \Sigma, R, S),$ where
         - $V$ is an alphabet;
         - $\Sigma \subseteq V$ is the set of terminal symbols ($V-\sum$ is called the set of nonterminal symbols).
         - $S \in V-\sum$ is the start symbol
-        - $R$ is the set of rules, a finite subset of $(V^{*}(V-\Sigma) V^{*}) \times V^{*}$
+        - $R$ is the set of rules, a finite subset of $(V^{\ast}(V-\Sigma) V^{\ast}) \times V^{\ast}$
 	+ Theorem: A language is generated by a **grammar** if and only if it is **recursively enumerable**.
-	+ Definition: Let $G=(V, \Sigma, R, S)$ be a *grammar*, and let $f: \Sigma^{*} \rightarrow \Sigma^{*}$ be a function. $G$ **computes** $f$, if for all $w, v \in \Sigma^{*},$ the following is true: $S w S \Rightarrow_{G}^{*} v \text { iff } v=f(w)$
-	+ A function $f: \Sigma^{*} \rightarrow \Sigma^{*}$ is called **grammatically computable** iff there is a *grammar* $G$ that **computes** it.
-	+ Theorem: A function $f: \Sigma^{*} \rightarrow \sum^{*}$ is **recursive** iff and only if it is **grammatically computable**.
+	+ Definition: Let $G=(V, \Sigma, R, S)$ be a *grammar*, and let $f: \Sigma^{\ast} \rightarrow \Sigma^{\ast}$ be a function. $G$ **computes** $f$, if for all $w, v \in \Sigma^{\ast},$ the following is true: $S w S \Rightarrow_{G}^{\ast} v \text { iff } v=f(w)$
+	+ A function $f: \Sigma^{\ast} \rightarrow \Sigma^{\ast}$ is called **grammatically computable** iff there is a *grammar* $G$ that **computes** it.
+	+ Theorem: A function $f: \Sigma^{\ast} \rightarrow \Sigma^{\ast}$ is **recursive** iff and only if it is **grammatically computable**.
 
 + **primitive recursive function**
-	- The **primitive recursive functions** are all basic functions (the *$k$-ary zero function, the $j$-th $k$-ary identity function,  the successor function*), and all functions that can be obtained by them by any number of successive applications of composition and recursive definition.
+	- The **primitive recursive functions** are all basic functions (*the $k$-ary zero function, the $j$-th $k$-ary identity function,  the successor function*), and all functions that can be obtained by them by any number of successive applications of composition and recursive definition.
 	- Example
 		+ $\mathrm{plus(m, 0)=m, plus(m, n+1)=succ(plus(m, n))}$
 		+ $\mathrm{mult(m, 0)=zero(m),mult(m, n+1)=plus(m, mult(m, n))}$
@@ -189,8 +189,8 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 		+ $\mathrm{prime}(x) \Leftrightarrow(x>1) \wedge \forall t_{(<x)}[t=1 \vee \neg(t | x)]$
 	- Note: The set of primitive recursive function is **proper subset** of the set of recursive function.
 		+ Prove: List all the primitive recursive function $f_i$. Assume $g(n)=f_n(n)+1$, so $g$ is computable but not primitive recursive.
-	- Definition: A function is **$\mu$ -recursive** if it can be obtained from the basic functions by the operations of composition, recursive definition, and minimalization of minimalizable functions.
-		+ $\log (m, n)=\mu p[\text {greater-than-or-equal( }(m+2) \uparrow p, n+1)]$
+	- Definition: A function is **$\mu$-recursive** if it can be obtained from the basic functions by the operations of composition, recursive definition, and minimalization of minimalizable functions.
+		+ $\log (m, n)=\mu ~ p[\text {greater-than-or-equal( }(m+2) \uparrow p, n+1)]$
 	- Theorem: A function $f: \mathbb{N}^{k} \rightarrow \mathbb{N}$ is **$\mu$ -recursive** iff it is recursive (that is, computable by a TM).
 
 ## Undecidability
@@ -215,7 +215,7 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 	    + Left $\rightarrow$ Right: Simple.
 	    + Right $\rightarrow$ Left: Left two $TM$ run simultaneously, either of them will stop finally.
 
-+   Definition: We say that a Turing machine $M$ enumerates the language $L$ iff for some fixed state $q$ of $M$, $L=\{w:(s, \rhd, \underline \sqcup) \vdash_{M}(q, \supset \rhd, \underline  \sqcup w)\}$. A language is Turing-enumerable iff there is a Turing machine that enumerates it.
++   Definition: We say that a Turing machine $M$ enumerates the language $L$ iff for some fixed state $q$ of $M$, $L=\{w:(s, \rhd, \underline \sqcup) \vdash_{M}(q, \rhd, \underline  \sqcup w)\}$. A language is Turing-enumerable iff there is a Turing machine that enumerates it.
 	- A language is **recursively enumerable** iff it is Turing-enumerable.
 	- A language is **recursively** iff it is lexicographically Turing-enumerable.
 - **Rice Theorem:** If $S$ is a class of recursively enumerable languages such that $\mathscr{I}(S)$ is neither empty nor the set of all indices, then $\mathscr{I}(S)$ is undecidable.
