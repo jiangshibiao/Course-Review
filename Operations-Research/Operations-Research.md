@@ -214,7 +214,7 @@
 		+ 最短路：$E$ 中元素是边，$\mathcal{F}$ 中元素是起点到终点的简单路径及其子集，费用边权。
 		+ 旅行商问题：$E$ 中元素是边，$\mathcal{F}$ 中元素是哈密尔顿回路及其子集，费用是边权。
 	- 独立系统的**交**：两个独立集系统 $(E,\mathcal F_1)$ 和 $(E, \mathcal F_2)$ 的交为 $(E, \mathcal F_1 \cup \mathcal F_2)$.
-	- 独立系统的**对偶**：设 $\mathcal{F}^* = \{F \subseteq E ~|~ \exists (E, \mathcal{F}) \text{ 的基 } B, F \cap B = \emptyset\}$。显然 $(E, \mathcal{F}^*)$也是独立系统，我们称 $(E, \mathcal{F})$ 与 $(E, \mathcal{F}^*)$ 互为对偶。
+	- 独立系统的**对偶**：设 $\mathcal{F}^\ast = \{F \subseteq E ~|~ \exists (E, \mathcal{F}) \text{ 的基 } B, F \cap B = \emptyset\}$。显然 $(E, \mathcal{F}^\ast)$也是独立系统，我们称 $(E, \mathcal{F})$ 与 $(E, \mathcal{F}^\ast)$ 互为对偶。
 - **拟阵**：基的大小都相等的独立系统。
 	
 + 常见的独立系统
