@@ -58,7 +58,7 @@
 + Theorem: **A language is regular iff it is accepted by a $\mathrm{FA}$ .**
 	- $\mathrm{RL}\rightarrow \mathrm{FA}$: Simply use the above properties.
 	- $\mathrm{FA}\rightarrow \mathrm{RL}$ 
-		+ Definition: For $i, j=1, \cdots, n$ and $k=0, \cdots, n$, define $R(i, j, k)=\{w | w \in \sum^{\ast}, \delta(q_i, w)=q_j \}$ and for any prefix $x$ of $w$, $x \neq e$, $\delta (q_{i}, x)=q_{l} \wedge(l \leq k) \}$. 
+		+ Definition: For $i, j=1, \cdots, n$ and $k=0, \cdots, n$, define $R(i, j, k)=\{w | w \in \sum^{\ast}, \delta(q_i, w)=q_j \}$ and for any prefix $x$ of $w$, $x \neq e$, $\delta (q_{i}, x)=q_{l} \wedge (l \leq k)$. 
 		+ i.e. Each string $w$ which satisfies that $q_i$ use $w$ to reach $q_j$ just with the help of $q_1\dots q_k$.
 		+ Lemma: $R(i, j, k)$ are regular languages.
 		+ Construct the new equivalent FA $K'=K \cup \{s',f'\}$ that has the only initial state and the only final state. $R(s',f',n)$ is the regular language we construct.
@@ -107,8 +107,10 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 	- Theorem: Let $G=(V, \Sigma, R, S)$ be a CFG. Then any string $w \in L(G)$ of length greater than $\phi(G)|V-\Sigma|$ can be rewritten as $w=u v x y z$ in such way that
 		+ $|v y| \geq 1$
 		+ ${u v^{n} x y^{n} z \in L(G) \text { for every } n \geq 0}$
-	**Example**: Show that $L=\{a^{n} b^{n} c^{n}: n \geq 0\}$ is not CFL.
-	**Proof**: **Case** $1$: $v, y$ contains occurrences of all three symbols $a, b, c$ $\Rightarrow$ at least one of $v, y$ must contain at least two of them $\Rightarrow$ order error in $u v^{2} x y^{2} z$.       **Case** $2$: $v, y$ contains occurrences of some but not all of them $\Rightarrow u v^{2} x y^{2} z$ has unequal number of $a^{\prime} s, b^{\prime} s$ and $c^{\prime} s$
+	- **Example**: Show that $L=\{a^{n} b^{n} c^{n}: n \geq 0\}$ is not CFL.
+	- **Proof**: 
+		+ **Case** $1$: $v, y$ contains occurrences of all three symbols $a, b, c$ $\Rightarrow$ at least one of $v, y$ must contain at least two of them $\Rightarrow$ order error in $u v^{2} x y^{2} z$.
+		+ **Case** $2$: $v, y$ contains occurrences of some but not all of them $\Rightarrow u v^{2} x y^{2} z$ has unequal number of $a^{\prime} s, b^{\prime} s$ and $c^{\prime} s$
 
 ## Turing Machine
 + Definition: A **Turing Machine** is a quintuple $(K, \sum, \delta, s, H)$ where
@@ -196,11 +198,8 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 ## Undecidability
 
 +   Church - Turing thesis: Intuitive notation of "computable" = Formal notation of "computable functions by TM" .
-    
     +   A problem is **decidable** iff it is **recursive**.
-    
 +   There is no program, no algorithm for solving the halting problem.
-
 +   Theorem: Let $H=\{''M''~''w'': \text { TM } M \text { halts on input string } w \}$ The language $H$ is not recursive (but r.e.).
     +   Therefore, the class of recursive languages is a strict subset of the class of recursively enumerable languages.
     +   Proof:
@@ -214,7 +213,6 @@ Consider $((p, \alpha, \beta),(q, \gamma)) \in \Delta,$ Then the PDA can:
 	+ $L$ is recursive iff $L$ and $\hat{L}$ are both r.e..
 	    + Left $\rightarrow$ Right: Simple.
 	    + Right $\rightarrow$ Left: Left two $TM$ run simultaneously, either of them will stop finally.
-
 +   Definition: We say that a Turing machine $M$ enumerates the language $L$ iff for some fixed state $q$ of $M$, $L=\{w:(s, \rhd, \underline \sqcup) \vdash_{M}(q, \rhd, \underline  \sqcup w)\}$. A language is Turing-enumerable iff there is a Turing machine that enumerates it.
 	- A language is **recursively enumerable** iff it is Turing-enumerable.
 	- A language is **recursively** iff it is lexicographically Turing-enumerable.
