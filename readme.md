@@ -1,8 +1,9 @@
 ## Course-Review
 >   This repository records some of my courses in Zhejiang University.
->   It consist of Experiment reports, Projects and Review summaries.
+>
+>   It consists of Experiment reports, Projects and Review summaries.
 
-Note
+Notice:
 +   **Due to the limit of time, some summaries may not be complete.**
 +   Click on the name to open the corresponding link.
 +   Courses are Sorted in descending time order.
