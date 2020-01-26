@@ -3,7 +3,7 @@
 
 **Note: Due to the limit of time, some summaries may not be complete.**
 
-The content is as follows:
+The content is as follows: (sort in chronological order)
 
 +   [**Operations Research** by Guochuan Zhang](https://github.com/jiangshibiao/Course-Review/blob/master/Operations-Research/Operations-Research.md)
 +   [**Principle of Programming Language** by Kai Weng](https://github.com/jiangshibiao/Course-Review/blob/master/Principle-of-Programming-Language/readmemd)
@@ -24,3 +24,5 @@ The content is as follows:
     +   Project1: [MiniSQL](https://github.com/jiangshibiao/MiniSQL)
     +   Project2: [Simple-Library-Manage-System](https://github.com/jiangshibiao/Simple-Library-Manage-System)
 
++   [**Digital Logic Design** by Zonghui Wang](https://github.com/jiangshibiao/Course-Review/blob/master/Digital-Logic-Design)
+    +   Project: [Tetris](https://github.com/jiangshibiao/Tetris)
