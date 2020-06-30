@@ -1,14 +1,14 @@
-## Course-Review
+# Course-Review
 >   This repository records some of my courses in Zhejiang University.
 >
 >   It consists of Experiment reports, Projects and Review summaries.
 
 Notice:
-+   Courses are Sorted in descending time order.
-+   Due to the limit of time, some summaries may not be complete.
++   Courses are sorted in descending time order.
++   Due to the limitation of time, some summaries may not be complete.
 +   If the materials of some courses can not be public, I will delete the corresponding files.
 
-#### 2019-2020 Spring & Summer Semester
+## 2019-2020 Spring & Summer Semester
 
 +   ***Algorithm Design & Analysis*** by Guochuan Zhang
     +   Chinese Summary: [Here](https://jiangshibiao.github.io/2020/04/26/Algorithm-Designs-and-Analysis/)
@@ -19,7 +19,7 @@ Notice:
     +   Chinese Summary: [Here](https://jiangshibiao.github.io/2020/04/06/Compiling-Principle/)
     +   Group Project: [Our-Pascal-Compiler](https://github.com/huangyangyi/Our-Pascal-Compiler/)
     +   Presentation of this project: [Our-Pascal-Compiler](https://github.com/jiangshibiao/Course-Review/tree/master/Compiler-Principle/Compiler-Principle-Presentation.mp4)
-    +   Report: [Java Compiler](https://github.com/jiangshibiao/Course-Review/tree/master/Compiler-Principle/JAVA_Compiler)
+    +   Report: [Java Compiler](https://github.com/jiangshibiao/Course-Review/tree/master/Compiler-Principle/JAVA_Compiler.pdf)
 +   ***Computer Network*** by Wei Dong
     +   Chinese Summary: [Here](https://jiangshibiao.github.io/2020/04/02/Computer-Network/)
     +   One cheat sheet: [Here](https://github.com/jiangshibiao/Course-Review/tree/master/Computer-Network/A4.pptx)
@@ -31,16 +31,16 @@ Notice:
     +   Coding3: [KNN, K-mans, Neural Network](https://github.com/jiangshibiao/Course-Review/tree/master/Data-Mining/assignment3)
     +   Coding4: [Clustering](https://github.com/jiangshibiao/Course-Review/tree/master/Data-Mining/assignment4)
     +   Final Project: [Decision Tree, Random Forest, Adaboost and GBDT](https://github.com/jiangshibiao/Course-Review/tree/master/Data-Mining/project)
-    +   Bonus Problem: [Here](https://github.com/jiangshibiao/Course-Review/tree/master/Data-Mining/bonus)
+    +   Bonus Problems: [Here](https://github.com/jiangshibiao/Course-Review/tree/master/Data-Mining/bonus)
 +   ***Great Ideas in Computer Science*** by Yingcai Wu, Yunjun Gao, Xi Li, Jing Huang, Deng Cai, Shouling Ji
     +   Group Research: [VQA](https://github.com/jiangshibiao/Course-Review/tree/master/Great-Ideas-in-Computer-Science/VQA.pptx)
-    +   Group Research Video: [Here](https://github.com/jiangshibiao/Course-Review/tree/master/Great-Ideas-in-Computer-Science/VQA.mp4)
+    +   Group Research Video: [VQA](https://github.com/jiangshibiao/Course-Review/tree/master/Great-Ideas-in-Computer-Science/VQA.mp4)
 +   ***Machine Learning: Algorithms and Applications*** by Zhou Zhao
-    +   Group Project Report in Chinese: [CoSQL测试报告](https://github.com/jiangshibiao/Course-Review/tree/master/Machine-Learning/CoSQL_Report.pdf)
+    +   Group Project Report in Chinese: [CoSQL Report](https://github.com/jiangshibiao/Course-Review/tree/master/Machine-Learning/CoSQL_Report.pdf)
     +   Schema of our project: [CoSQL](https://jiangshibiao.github.io/2020/04/27/CoSQL/)
     +   Presentation: [Document Analysis](https://github.com/jiangshibiao/Course-Review/tree/master/Machine-Learning/Document_Analysis.pptx)
 
-#### 2019-2020 Fall & Winter semester
+## 2019-2020 Fall & Winter semester
 
 +   ***Computer Vision*** by Mingli Song
     +   Chinese Summary: [Here](https://jiangshibiao.github.io/2020/01/13/Computer-Vision/)
@@ -70,8 +70,7 @@ Notice:
 +   **Theory of Computation** by Yinchun Yang
     +   English Summary: [Here](https://jiangshibiao.github.io/2020/01/12/Theory-of-Computation/)
 
-
-#### 2018-2019 Spring & Summer semester
+## 2018-2019 Spring & Summer semester
 
 +   ***Computer Graphics*** by Ruofeng Tong
     +   Project: [pumpkinBattle](https://github.com/jiangshibiao/pumpkinBattle)
@@ -89,7 +88,7 @@ Notice:
 +   ***Python Programming*** by Chunhui Chen
     +   Chinese Summary: [Here](https://jiangshibiao.github.io/2019/06/28/Python-Programming/)
 
-#### 2018-2019 Fall & Winter semester
+## 2018-2019 Fall & Winter semester
 
 +   ***Digital Logic Design*** by Zonghui Wang
     +   Experiment Reports in Chinese: [Here](https://github.com/jiangshibiao/Course-Review/blob/master/Digital-Logic-Design)
